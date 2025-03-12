@@ -48,8 +48,8 @@ public class HarmonicOscillatorRK4 : MonoBehaviour
         System.Func<Vector2, Vector2, Vector2> acceleration = (p, v) => new Vector2(-k * (p.x - x0) / mass, 0);
 
         //k1
-        Vector2 k1_v = acceleration(pos, vel) * stepTime;
-        Vector2 k1_x = vel * stepTime;
+        Vector2 k1_v = acceleration(pos, vel);
+        Vector2 k1_x = vel;
 
         //k2
         Vector2 k2_v = acceleration(pos + 0.5f * k1_x, vel + 0.5f * k1_v) * stepTime;
